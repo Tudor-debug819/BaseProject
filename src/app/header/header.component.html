@@ -1,1 +1,10 @@
-<p>header works!</p>
+<header [class.sticky]="config.sticky" [class.transparent]="config.transparent">
+  <nav *ngIf="config.visible">
+    <ul>
+      <li *ngFor="let item of config.items" [class.disabled]="!item.enabled">
+        <a *ngIf="item.enabled" [routerLink]="item.route">{{ item.label }}</a>
+        <span *ngIf="!item.enabled">{{ item.label }}</span>
+      </li>
+    </ul>
+  </nav>
+</header>

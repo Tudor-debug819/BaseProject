@@ -1,12 +1,30 @@
-import { Component } from '@angular/core';
-import { RouterOutlet } from '@angular/router';
+import { Component, OnInit } from '@angular/core';
+import { RouterOutlet,RouterModule } from '@angular/router';
+import { HeaderComponent } from './header/header.component';
+import { HttpClientModule } from '@angular/common/http';
+import { CommonModule } from '@angular/common';
+import { MenuService } from './menu.service';
 
 @Component({
   selector: 'app-root',
-  imports: [RouterOutlet],
+  standalone: true,
+  imports: [RouterOutlet,RouterModule, HeaderComponent, HttpClientModule, CommonModule], // Add HttpClientModule
   templateUrl: './app.component.html',
-  styleUrl: './app.component.css'
+  styleUrls: ['./app.component.css'],
+  providers: [MenuService] // Optionally provide MenuService explicitly (if needed)
 })
-export class AppComponent {
-  title = 'BaseProject';
+export class AppComponent implements OnInit {
+  menuConfig: any;
+
+  constructor(private menuService: MenuService) {}
+
+  ngOnInit(): void {
+    // Load menu configuration from JSON
+    this.menuService.getMenuConfig().subscribe((config) => {
+      this.menuConfig = config;
+      console.log(config);
+      
+    });
+    
+  }
 }
