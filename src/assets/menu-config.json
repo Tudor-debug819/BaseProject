@@ -1,0 +1,11 @@
+{
+    "sticky": true,
+    "transparent": false,
+    "visible": true,
+    "items": [
+      { "label": "Home", "route": "/home", "enabled": true },
+      { "label": "About Us", "route": "/about", "enabled": true },
+      { "label": "Services", "route": "/services", "enabled": false },
+      { "label": "Contact", "route": "/contact", "enabled": true }
+    ]
+  }
