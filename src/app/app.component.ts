@@ -5,11 +5,12 @@ import { HttpClientModule } from '@angular/common/http';
 import { CommonModule } from '@angular/common';
 import { MenuService } from './menu.service';
 import { FooterComponent } from './footer/footer.component';
+import { SidebarComponent } from "./sidebar/sidebar.component";
 
 @Component({
   selector: 'app-root',
   standalone: true,
-  imports: [RouterOutlet,RouterModule, HeaderComponent, HttpClientModule, CommonModule,FooterComponent],
+  imports: [RouterOutlet, RouterModule, HeaderComponent, HttpClientModule, CommonModule, FooterComponent, SidebarComponent],
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.css'],
   providers: [MenuService] // Optionally provide MenuService explicitly (if needed)
