@@ -1,11 +1,14 @@
-import { Component } from '@angular/core';
+import { Component, Input } from '@angular/core';
+import { CommonModule } from '@angular/common';
 
 @Component({
   selector: 'app-footer',
-  imports: [],
+  standalone: true,
   templateUrl: './footer.component.html',
-  styleUrl: './footer.component.css'
+  styleUrls: ['./footer.component.css'],
+  imports: [CommonModule],
 })
 export class FooterComponent {
-
+  @Input() sticky: boolean = false; // Determines if the footer is sticky
+  @Input() enabled: boolean = true; // Determines if the footer is displayed
 }

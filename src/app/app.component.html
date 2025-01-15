@@ -1,2 +1,6 @@
 <app-header *ngIf="menuConfig" [config]="menuConfig"></app-header>
 <router-outlet></router-outlet>
+<app-footer
+  [sticky]="footerConfig.sticky"
+  [enabled]="footerConfig.enabled">
+</app-footer>
