@@ -9,7 +9,7 @@ import { FooterComponent } from './footer/footer.component';
 @Component({
   selector: 'app-root',
   standalone: true,
-  imports: [RouterOutlet,RouterModule, HeaderComponent, HttpClientModule, CommonModule,FooterComponent], // Add HttpClientModule
+  imports: [RouterOutlet,RouterModule, HeaderComponent, HttpClientModule, CommonModule,FooterComponent],
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.css'],
   providers: [MenuService] // Optionally provide MenuService explicitly (if needed)
