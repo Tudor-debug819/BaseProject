@@ -9,6 +9,6 @@ import { CommonModule } from '@angular/common';
   imports: [CommonModule],
 })
 export class FooterComponent {
-  @Input() sticky: boolean = false; // Determines if the footer is sticky
-  @Input() enabled: boolean = true; // Determines if the footer is displayed
+  @Input() sticky: boolean = false;
+  @Input() enabled: boolean = true;
 }

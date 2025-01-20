@@ -12,6 +12,6 @@ import { MenuConfig } from '../menu-config.model';
 })
 export class SidebarComponent {
   @Input() enabled: boolean = true; 
-  @Input() isExpanded: boolean = true;
+  @Input() isExpanded: boolean = false;
   @Input() menuConfig!: MenuConfig;
 }
