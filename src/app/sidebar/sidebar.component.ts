@@ -1,6 +1,7 @@
 import { Component, Input } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { RouterModule } from '@angular/router';
+import { MenuConfig } from '../menu-config.model';
 
 @Component({
   selector: 'app-sidebar',
@@ -12,4 +13,5 @@ import { RouterModule } from '@angular/router';
 export class SidebarComponent {
   @Input() enabled: boolean = true; 
   @Input() isExpanded: boolean = true;
+  @Input() menuConfig!: MenuConfig;
 }

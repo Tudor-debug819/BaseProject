@@ -1,14 +1,13 @@
 <aside *ngIf="enabled" [class.collapsed]="!isExpanded">
-    <button class="collapse-btn" (click)="isExpanded = !isExpanded">
-      {{ isExpanded ? 'Collapse' : 'Expand' }}
-    </button>
-    <nav>
-      <ul>
-        <li><a routerLink="/home">Home</a></li>
-        <li><a routerLink="/about">About Us</a></li>
-        <li><a routerLink="/services">Services</a></li>
-        <li><a routerLink="/contact">Contact</a></li>
-      </ul>
-    </nav>
-  </aside>
-  
+  <button class="collapse-btn" (click)="isExpanded = !isExpanded">
+    {{ isExpanded ? 'Collapse' : 'Expand' }}
+  </button>
+  <nav>
+    <ul>
+      <li *ngFor="let item of menuConfig.items" [class.disabled]="!item.enabled">
+        <a *ngIf="item.enabled" [routerLink]="item.route">{{ item.label }}</a>
+        <span *ngIf="!item.enabled">{{ item.label }}</span>
+      </li>
+    </ul>
+  </nav>
+</aside>
