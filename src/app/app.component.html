@@ -1,7 +1,20 @@
-<app-header *ngIf="menuConfig" [config]="menuConfig"></app-header>
+<app-header
+  *ngIf="menuConfig"
+  [config]="menuConfig"
+  [sidebarEnabled]="sidebarConfig.enabled"
+  (sidebarToggle)="toggleSidebar()"
+></app-header>
+
+<app-sidebar
+  *ngIf="sidebarConfig.enabled"
+  [enabled]="sidebarConfig.enabled"
+  [isExpanded]="sidebarConfig.isExpanded"
+></app-sidebar>
+
 <router-outlet></router-outlet>
-<app-sidebar/>
+
 <app-footer
+  *ngIf="footerConfig.enabled"
   [sticky]="footerConfig.sticky"
-  [enabled]="footerConfig.enabled">
-</app-footer>
+  [enabled]="footerConfig.enabled"
+></app-footer>
